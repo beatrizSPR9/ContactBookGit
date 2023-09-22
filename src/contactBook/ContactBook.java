@@ -108,4 +108,13 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    public boolean hasSharedContacts(){
+        for (int i = 0; i< contacts.length-1; i++){
+            for( int j = i+1; j<contacts.length;j++){
+                if(contacts[i].getPhone() == contacts[j].getPhone())
+                    return true;
+            }
+        }
+        return false;
+    }
 }
