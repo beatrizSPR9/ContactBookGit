@@ -31,7 +31,7 @@ public class Main {
 
     public static final String PHONES_SHARE_CONTACTS = "There are contacts that share phone numbers.";
 
-    public static final String NO_SHARED_PHONES = "All contacts have different phone numbers";
+    public static final String NO_SHARED_PHONES = "All contacts have different phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -166,6 +166,7 @@ public class Main {
 
     private static void listContactByNumber(Scanner in, ContactBook cBook) {
         int number = in.nextInt();
+        in.nextLine();
         if(cBook.hasContact(number))
             System.out.println(cBook.getName(number));
         else

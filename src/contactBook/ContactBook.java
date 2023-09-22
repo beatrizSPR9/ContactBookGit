@@ -113,8 +113,8 @@ public class ContactBook {
     }
 
     public boolean hasSharedContacts(){
-        for (int i = 0; i< contacts.length-1; i++){
-            for( int j = i+1; j<contacts.length;j++){
+        for (int i = 0; i< currentContact-1; i++){
+            for( int j = i+1; j<currentContact;j++){
                 if(contacts[i].getPhone() == contacts[j].getPhone())
                     return true;
             }
