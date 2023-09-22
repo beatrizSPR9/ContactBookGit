@@ -60,12 +60,27 @@ public class ContactBook {
         contacts[searchIndex(name)].setEmail(email);
     }
 
+    public String getName(int phone) { return contacts[searchIndex(phone)].getName(); }
+
     private int searchIndex(String name) {
         int i = 0;
         int result = -1;
         boolean found = false;
         while (i<counter && !found)
             if (contacts[i].getName().equals(name))
+                found = true;
+            else
+                i++;
+        if (found) result = i;
+        return result;
+    }
+
+    private int searchIndex(int phone) {
+        int i = 0;
+        int result = -1;
+        boolean found = false;
+        while (i<counter && !found)
+            if (contacts[i].getPhone() == phone)
                 found = true;
             else
                 i++;
@@ -93,4 +108,13 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    public boolean hasSharedContacts(){
+        for (int i = 0; i< contacts.length-1; i++){
+            for( int j = i+1; j<contacts.length;j++){
+                if(contacts[i].getPhone() == contacts[j].getPhone())
+                    return true;
+            }
+        }
+        return false;
+    }
 }
