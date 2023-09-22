@@ -166,6 +166,10 @@ public class Main {
 
     private static void listContactByNumber(Scanner in, ContactBook cBook) {
         int number = in.nextInt();
+        if(cBook.hasContact(number))
+            System.out.println(cBook.getName(number));
+        else
+            System.out.println(PHONE_DOESNT_EXIST);
     }
 
     private static void contactsWithSameNumber(ContactBook cBook) {
