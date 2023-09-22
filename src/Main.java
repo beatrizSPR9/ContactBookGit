@@ -169,7 +169,10 @@ public class Main {
     }
 
     private static void contactsWithSameNumber(ContactBook cBook) {
-
+        if (cBook.hasSharedContacts())
+            System.out.println(PHONES_SHARE_CONTACTS);
+        else
+            System.out.println(NO_SHARED_PHONES);
     }
 }
 
